@@ -24,11 +24,11 @@ function Dyfinit(target, template, loadAmount, initialAmount, buffertPercent = 2
 }
 
 
-Dyfinit.prototype.fetch = function(amount){
+Dyfinit.prototype.fetch = function(amount = null){
 	var self = this; // Create a closure (nessesary for the ajax callback)
 	this.readyState = false; // Prevent more fetches untill this is finnished
 
-	if(typeof amount === "undefined"){ // Set a value if none was sent
+	if(amount === null){ // Set a value if none was sent
 		amount = this.loadAmount;
 	}
 
