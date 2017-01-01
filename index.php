@@ -15,14 +15,24 @@
 		<div id="example"></div>
 	</div>
 	
+
+	
+	<!-- Other libraries -->
+	<script src="basic/ajax.js"></script>
+
 	<!-- Dyfinit library -->
-	<script src="dyfinit/ajax.js"></script>
+	<script src="dyfinit/linker.js"></script>
 	<script src="dyfinit/build.js"></script>
 
 	<script>
+
+		// Randomly decide on a target class
+		var targetClass = Math.round(Math.random()) === 0 ? "Example1": "Example2";
+
+		// Create the Dyfinit element
 		var example = new Dyfinit(
 			document.getElementById("example"), // Target
-			"Example", // Target template php class
+			targetClass, // Target template php class
 			3, // Load per call
 			3, // Initial load amount
 			20 // Buffert (%)

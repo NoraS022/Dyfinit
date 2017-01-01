@@ -35,3 +35,8 @@ html, body{
     		-webkit-margin-after: 0.30em;
 			color: #5b5c5e;
 		}
+.exampleFrame{
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+}

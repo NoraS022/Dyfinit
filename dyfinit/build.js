@@ -32,8 +32,9 @@ Dyfinit.prototype.fetch = function(amount = null){
 		amount = this.loadAmount;
 	}
 
-	// Make the http fetches
-	ajax("POST", "dyfinit/provider.php", function(response){
+	
+	// Send the ajax call to the linker
+	dyfinit_linker(function(response){
 		var tempEl = null; // Temporary element
 		response = JSON.parse(response); // Make an object out of the response json
 		self.offset += parseInt(response.html.length); // Increment the offset by returned results
@@ -51,6 +52,8 @@ Dyfinit.prototype.fetch = function(amount = null){
 		if(response.more){
 			self.readyState = true; // Allow more fetches again
 		}
-	}, {amount: amount, offset: this.offset, template: this.template});
+	}, 
+	"dyfinit/provider.php", 
+	{amount: amount, offset: this.offset, template: this.template});
 }
 

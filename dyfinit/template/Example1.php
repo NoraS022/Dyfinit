@@ -1,11 +1,11 @@
 <?php 
 	// A template for a Dyfinit element
-	class Example{
+	class Example1{
 		public $data = [];
 
 		function __construct(){
 			// Assign the data
-			$data = json_decode(file_get_contents("data/sample.json")); // Fetch the data
+			$data = json_decode(file_get_contents("../data/example1.json")); // Fetch the data
 			foreach($data as $instance => $value){
 				array_push($this->data, $data[$instance]); // Assign it to an array
 			}
